@@ -170,3 +170,19 @@ body {
     font-size: 1rem;
   }
 }
+
+.generate-btn {
+  margin-top: 10px;
+  background-color: #5b21b6;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.generate-btn:hover {
+  background-color: #7c3aed;
+}
