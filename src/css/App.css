@@ -13,7 +13,7 @@ body {
 .main-container {
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(to bottom, #9333ea, #7c3aed);
+  background: linear-gradient(to bottom, #0008ff, #7c3aed);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,11 +46,11 @@ body {
 }
 
 .logo-up {
-  color: #ef4444;
+  color: #cdeb54;
 }
 
 .logo-well {
-  color: #3b82f6;
+  color: #000000;
 }
 
 .logo-tagline {

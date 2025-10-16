@@ -1,9 +1,12 @@
-import React from 'react'
-import LevelUpHomepage from './components/LevelUpHomepage'
-import './App.css'
+import Container from './components/Container';
+import './css/App.css';
 
 function App() {
-  return <LevelUpHomepage />
+  return (
+    <div className="App">
+      <Container />
+    </div>
+  );
 }
 
-export default App
+export default App;

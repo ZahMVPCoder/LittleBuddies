@@ -1,3 +1,5 @@
+
+
 export function generateSmartPassword() {
   const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+[]";
   let password = "";

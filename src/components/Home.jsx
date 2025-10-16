@@ -1,38 +1,83 @@
-// Import React library
-import React from "react";
+import React from 'react';
+import '../css/Home.css';
 
-// Home component receives onNavigate function from App
-export default function Home({ onNavigate }) {
+function Home({ character = 'penguin', onNavigate }) {
+  const characterData = {
+    penguin: {
+      name: 'PENGUIN',
+      image: '/assets/penguin.png',
+      message: "I FEEL LIKE I'M GOING TO LEVEL UP IF YOU DO 5 JUMPING JACKS",
+      stats: { speed: 3, str: 5, sta: 4 },
+      background: 'penguin-bg'
+    },
+    duck: {
+      name: 'DUCK',
+      image: '/assets/duck.png',
+      message: '"QUACK"\n\nI BELIEVE IN YOU!',
+      stats: { speed: 4, str: 3, sta: 5 },
+      background: 'duck-bg'
+    },
+    chicken: {
+      name: 'CHICKEN',
+      image: '/assets/chicken.png',
+      message: 'MAKE THIS DAY SPECIAL!',
+      stats: { speed: 5, str: 4, sta: 3 },
+      background: 'chicken-bg'
+    }
+  };
+
+  const currentCharacter = characterData[character];
+
   return (
-    // Container for page content
-    <div className="container">
-      {/* Logo text */}
-      <h1 className="logo">
-        Level<span className="up">Up</span>Well
-      </h1>
-      {/* Tagline under logo */}
-      <p className="tagline">Level up your health with a little buddy</p>
+    <div className={`home-container ${currentCharacter.background}`}>
+      <button className="back-button" onClick={() => onNavigate('character-select')}>
+        ←
+      </button>
 
-      {/* Login form */}
-      <form className="form">
-        {/* Username/Email input */}
-        <input type="text" placeholder="Username or Email" />
-        {/* Password input */}
-        <input type="password" placeholder="Password" />
-        {/* Forgot password link */}zz
-        <a href="#" className="forgot">Forgot Password?</a>
-      </form>
+      <div className="character-label">
+        <img src={currentCharacter.image} alt={currentCharacter.name} />
+        <span>{currentCharacter.name}</span>
+      </div>
 
-      {/* Buttons group (Sign Up & Sign In) */}
-      <div className="button-group">
-        {/* Navigate to character selection on click */}
-        <button className="btn blue" onClick={() => onNavigate("character")}>
-          SIGN UP
-        </button>
-        <button className="btn red" onClick={() => onNavigate("character")}>
-          SIGN IN
-        </button>
+      <div className="stats-panel">
+        <h3>STATS</h3>
+        <div className="stat-item">
+          <span>SPEED:</span>
+          <span>{currentCharacter.stats.speed}</span>
+        </div>
+        <div className="stat-item">
+          <span>STR:</span>
+          <span>{currentCharacter.stats.str}</span>
+        </div>
+        <div className="stat-item">
+          <span>STA:</span>
+          <span>{currentCharacter.stats.sta}</span>
+        </div>
+      </div>
+
+      <div className="character-display">
+        <img src={currentCharacter.image} alt={currentCharacter.name} className="character-main" />
+        
+        <div className="speech-bubble">
+          {currentCharacter.message}
+        </div>
+      </div>
+
+      <div className="action-buttons">
+        <button className="quest-btn">Quest!</button>
+        <button className="race-btn">Race!</button>
+        <button className="achievements-btn">Achievements</button>
+      </div>
+
+      <div className="inventory-icon">
+        🎒
+      </div>
+
+      <div className="day-streak">
+        DAY STREAK: 1
       </div>
     </div>
   );
 }
+
+export default Home;

@@ -1,15 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react';
+import LoginForm from './LoginForm';
+import CharacterSelect from './CharacterSelect';
+import Home from './Home';
 
-const Container = ({ children }) => {
+function Container() {
+  const [currentPage, setCurrentPage] = useState('login');
+  const [selectedCharacter, setSelectedCharacter] = useState('penguin');
+
+  const handleNavigation = (page) => {
+    setCurrentPage(page);
+  };
+
+  const handleCharacterSelect = (character) => {
+    setSelectedCharacter(character);
+  };
+
   return (
-    <div className="main-container">
-      <div className="content-wrapper">
-        {children}
-      </div>
+    <div className="app-container">
+      {currentPage === 'login' && (
+        <LoginForm onNavigate={handleNavigation} />
+      )}
+      {currentPage === 'character-select' && (
+        <CharacterSelect
+          onNavigate={handleNavigation}
+          onCharacterSelect={handleCharacterSelect}
+        />
+      )}
+      {currentPage === 'home' && (
+        <Home
+          character={selectedCharacter}
+          onNavigate={handleNavigation}
+        />
+      )}
     </div>
-  )
+  );
 }
 
-export default Container
-
-
+export default Container;

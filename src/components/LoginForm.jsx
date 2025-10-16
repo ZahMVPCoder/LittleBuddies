@@ -1,48 +1,100 @@
-import React, { useState } from "react";
-import { generateSmartPassword } from "./PasswordGenerator";
+import React, { useState } from 'react';
+import '../css/LoginForm.css';
 
-export default function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+function LoginForm({ onNavigate }) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleGeneratePassword = () => {
-    const newPassword = generateSmartPassword();
-    setPassword(newPassword);
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    // Navigate to character selection
+    onNavigate('character-select');
+  };
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    // Navigate to character selection
+    onNavigate('character-select');
+  };
+
+  const generatePassword = () => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+    let password = '';
+    for (let i = 0; i < 12; i++) {
+      password += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    setPassword(password);
   };
 
   return (
     <div className="login-container">
-      <h1 className="title">
-        <span className="level">Level</span>
-        <span className="up">Up</span>
-        <span className="well">Well</span>
-      </h1>
-      <p className="subtitle">Level up your health with a little buddy</p>
+      <div className="login-header">
+        <h1 className="login-title">
+          <span className="title-level">Level</span>
+          <span className="title-up">Up</span>
+          <span className="title-well">Well</span>
+        </h1>
+        <p className="login-subtitle">Level up your health with a little buddy</p>
+      </div>
 
-      <label>USERNAME OR EMAIL</label>
-      <input
-        type="text"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email"
-      />
+      <div className="login-form">
+        <h2 className="form-title">LevelUpWell</h2>
+        <p className="form-subtitle">Level up your health with a little buddy</p>
 
-      <label>PASSWORD</label>
-      <input
-        type="text"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Enter your password"
-      />
+        <form>
+          <div className="form-group">
+            <label htmlFor="email">USERNAME OR EMAIL</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-      <button onClick={handleGeneratePassword} className="generate-btn">
-        Generate Password 🔐
-      </button>
+          <div className="form-group">
+            <label htmlFor="password">PASSWORD</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-      <p className="forgot-password">FORGOT PASSWORD</p>
+          <button
+            type="button"
+            className="generate-password-btn"
+            onClick={generatePassword}
+          >
+            Generate Password 🔒
+          </button>
 
-      <button className="signup-btn">SIGN UP</button>
-      <button className="signin-btn">SIGN IN</button>
+          <a href="#" className="forgot-password">
+            FORGOT PASSWORD
+          </a>
+
+          <button
+            type="submit"
+            className="sign-up-btn"
+            onClick={handleSignUp}
+          >
+            SIGN UP
+          </button>
+
+          <button
+            type="button"
+            className="sign-in-btn"
+            onClick={handleSignIn}
+          >
+            SIGN IN
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
+
+export default LoginForm;

@@ -1,33 +1,62 @@
-// Import React
-import React from "react";
+import React from 'react';
 
-// Character selection screen
-export default function CharacterSelect({ onNavigate }) {
+function CharacterSelect({ onNavigate, onCharacterSelect }) {
+  const handleCharacterChoice = (character) => {
+    // Save the selected character
+    onCharacterSelect(character);
+    // Navigate to the home page with the selected character
+    onNavigate('home');
+  };
+
   return (
-    <div className="container">
-      {/* Title */}
-      <h2 className="choose-title">Choose Your Buddy!</h2>
+    <div className="character-select-container">
+      <button className="back-button" onClick={() => onNavigate('login')}>
+        ←
+      </button>
 
-      {/* Character options */}
-      <div className="character-options">
-        {/* Button with chicken image */}
-        <button className="char-btn" onClick={() => onNavigate("exercise")}>
-          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="chicken" />
+      <button className="feedback-button">
+        FEEDBACK
+      </button>
+
+      <div className="character-icons">
+        <img src="/assets/penguin.png" alt="Penguin" className="icon-small" />
+        <img src="/assets/chicken.png" alt="Chicken" className="icon-small" />
+        <img src="/assets/duck.png" alt="Duck" className="icon-small" />
+      </div>
+
+      <h1 className="choose-title">Choose Your Buddy!</h1>
+
+      <div className="character-buttons">
+        <button
+          className="character-button"
+          onClick={() => handleCharacterChoice('chicken')}
+        >
+          <img src="/assets/chicken.png" alt="Chicken" />
           <span>CHICKEN</span>
         </button>
 
-        {/* Button with duck image */}
-        <button className="char-btn" onClick={() => onNavigate("exercise")}>
-          <img src="https://cdn-icons-png.flaticon.com/512/1998/1998610.png" alt="duck" />
+        <button
+          className="character-button"
+          onClick={() => handleCharacterChoice('duck')}
+        >
+          <img src="/assets/duck.png" alt="Duck" />
           <span>DUCK</span>
         </button>
 
-        {/* Button with penguin image */}
-        <button className="char-btn" onClick={() => onNavigate("exercise")}>
-          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="penguin" />
+        <button
+          className="character-button"
+          onClick={() => handleCharacterChoice('penguin')}
+        >
+          <img src="/assets/penguin.png" alt="Penguin" />
           <span>PENGUIN</span>
         </button>
       </div>
+
+      <button className="chat-button">
+        💬
+      </button>
     </div>
   );
 }
+
+export default CharacterSelect;

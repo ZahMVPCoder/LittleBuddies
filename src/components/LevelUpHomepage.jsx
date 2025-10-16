@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Container from './Container'
 import Logo from './Logo'
 import LoginForm from './LoginForm'
+import '../css/LevelUpHomepage.css'
 
 const LevelUpHomepage = () => {
   const [username, setUsername] = useState('')
@@ -27,18 +28,26 @@ const LevelUpHomepage = () => {
   }
 
   return (
-    <Container>
-      <Logo />
-      <LoginForm
-        username={username}
-        setUsername={setUsername}
-        password={password}
-        setPassword={setPassword}
-        onSignUp={handleSignUp}
-        onSignIn={handleSignIn}
-        onForgotPassword={handleForgotPassword}
-      />
-    </Container>
+    <div className="homepage-wrapper">
+      <Container className="homepage-container">
+        <div className="homepage-header">
+          <Logo className="homepage-logo" />
+        </div>
+
+          <div className="homepage-login-section">
+            <LoginForm
+              className="homepage-login-form"
+              username={username}
+              setUsername={setUsername}
+              password={password}
+              setPassword={setPassword}
+              onSignUp={handleSignUp}
+              onSignIn={handleSignIn}
+              onForgotPassword={handleForgotPassword}
+            />
+          </div>
+      </Container>
+    </div>
   )
 }
 
