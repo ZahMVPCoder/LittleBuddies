@@ -118,11 +118,13 @@
   margin-top: 1.5rem;
 }
 
+/* ✅ Smaller main character image */
 .character-main {
-  width: 180px;
+  width: 18vw;
+  max-width: 200px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
 }
 
 /* === SPEECH BUBBLE === */
@@ -212,25 +214,5 @@
   background: rgba(255, 255, 255, 0.08);
   padding: 0.4rem 0.8rem;
   border-radius: 8px;
-  letter-spacing: 1px;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 500px) {
-  .character-main {
-    width: 140px;
-  }
-
-  .speech-bubble {
-    max-width: 200px;
-    font-size: 0.8rem;
-  }
-
-  .action-buttons {
-    flex-direction: column;
-  }
-
-  .action-buttons button {
-    width: 100%;
-  }
+  letter-spa
 }

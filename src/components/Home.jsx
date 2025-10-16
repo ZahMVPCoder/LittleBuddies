@@ -5,25 +5,25 @@ function Home({ character = 'penguin', onNavigate }) {
   const characterData = {
     penguin: {
       name: 'PENGUIN',
-      image: '/assets/penguin.png',
+      image: 'https://pngimg.com/uploads/madagascar_penguins/madagascar_penguins_PNG27.png',
       message: "I FEEL LIKE I'M GOING TO LEVEL UP IF YOU DO 5 JUMPING JACKS",
-      stats: { speed: 3, str: 5, sta: 4 },
+      stats: { spd: 3, str: 5, sta: 4 },
       background: 'penguin-bg'
     },
     duck: {
       name: 'DUCK',
-      image: '/assets/duck.png',
+      image: 'https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Cartoons-PNG/Little_Duck_PNG_Clip_Art_Image.png?m=1629830181',
       message: '"QUACK"\n\nI BELIEVE IN YOU!',
-      stats: { speed: 4, str: 3, sta: 5 },
+      stats: { spd: 4, str: 3, sta: 5 },
       background: 'duck-bg'
     },
     chicken: {
-      name: 'CHICKEN',
-      image: '/assets/chicken.png',
-      message: 'MAKE THIS DAY SPECIAL!',
-      stats: { speed: 5, str: 4, sta: 3 },
-      background: 'chicken-bg'
-    }
+  name: 'CHICKEN',
+  image: 'https://www.freeiconspng.com/uploads/red-single-chicken-png-8.png',
+  message: 'MAKE THIS DAY SPECIAL!',
+  stats: { spd: 5, str: 4, sta: 3 },
+  background: 'chicken-bg'
+}
   };
 
   const currentCharacter = characterData[character];
@@ -41,26 +41,14 @@ function Home({ character = 'penguin', onNavigate }) {
 
       <div className="stats-panel">
         <h3>STATS</h3>
-        <div className="stat-item">
-          <span>SPEED:</span>
-          <span>{currentCharacter.stats.speed}</span>
-        </div>
-        <div className="stat-item">
-          <span>STR:</span>
-          <span>{currentCharacter.stats.str}</span>
-        </div>
-        <div className="stat-item">
-          <span>STA:</span>
-          <span>{currentCharacter.stats.sta}</span>
-        </div>
+        <div className="stat-item"><span>SPD:</span><span>{currentCharacter.stats.spd}</span></div>
+        <div className="stat-item"><span>STR:</span><span>{currentCharacter.stats.str}</span></div>
+        <div className="stat-item"><span>STA:</span><span>{currentCharacter.stats.sta}</span></div>
       </div>
 
       <div className="character-display">
         <img src={currentCharacter.image} alt={currentCharacter.name} className="character-main" />
-        
-        <div className="speech-bubble">
-          {currentCharacter.message}
-        </div>
+        <div className="speech-bubble">{currentCharacter.message}</div>
       </div>
 
       <div className="action-buttons">
@@ -69,13 +57,8 @@ function Home({ character = 'penguin', onNavigate }) {
         <button className="achievements-btn">Achievements</button>
       </div>
 
-      <div className="inventory-icon">
-        🎒
-      </div>
-
-      <div className="day-streak">
-        DAY STREAK: 1
-      </div>
+      <div className="inventory-icon">🎒</div>
+      <div className="day-streak">DAY STREAK: 1</div>
     </div>
   );
 }

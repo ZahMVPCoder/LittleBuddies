@@ -1,0 +1,257 @@
+heres everything in my home.css before adding anything
+
+/* === GLOBAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === BACKGROUNDS === */
+.penguin-bg {
+  background: linear-gradient(180deg, #1c2541, #0b132b);
+}
+
+.duck-bg {
+  background: linear-gradient(180deg, #2a9d8f, #264653);
+}
+
+.chicken-bg {
+  background: linear-gradient(180deg, #ffaf00, #ff6f00);
+}
+
+/* === BACK BUTTON === */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* === CHARACTER LABEL === */
+.character-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 60px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #00ffaa;
+}
+
+.character-label img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 5px;
+}
+
+/* === STATS PANEL === */
+.stats-panel {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.2);
+  margin-top: 1rem;
+}
+
+.stats-panel h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  color: #00ffaa;
+  letter-spacing: 2px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #eee;
+  padding: 0.2rem 0;
+}
+
+/* === CHARACTER DISPLAY === */
+.character-display {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.character-main {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+/* === SPEECH BUBBLE === */
+.speech-bubble {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 1rem;
+  max-width: 250px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #fff;
+  white-space: pre-line;
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.1);
+  animation: bubblePop 0.5s ease-in-out;
+}
+
+@keyframes bubblePop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* === ACTION BUTTONS === */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.action-buttons button {
+  border: none;
+  border-radius: 12px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.quest-btn {
+  background: linear-gradient(90deg, #00ffaa, #00aaff);
+  color: #000;
+}
+
+.race-btn {
+  background: linear-gradient(90deg, #ff00aa, #ff6eff);
+  color: #fff;
+}
+
+.achievements-btn {
+  background: linear-gradient(90deg, #ffaa00, #ff6a00);
+  color: #000;
+}
+
+.action-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* === INVENTORY ICON === */
+.inventory-icon {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.inventory-icon:hover {
+  transform: scale(1.2);
+}
+
+/* === DAY STREAK === */
+.day-streak {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  font-size: 0.9rem;
+  color: #00ffaa;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  letter-spacing: 1px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 500px) {
+  .character-main {
+    width: 140px;
+  }
+
+  .speech-bubble {
+    max-width: 200px;
+    font-size: 0.8rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons button {
+    width: 100%;
+  }
+}
+.character-button img,
+.character-icons img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.character-button img:hover {
+  transform: scale(1.1);
+}
+
+.character-main {
+  width: 250px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
