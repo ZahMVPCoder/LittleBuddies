@@ -115,6 +115,19 @@ body {
   box-shadow: 0 0 5px #00ffaa;
 }
 
+/* Error Styles */
+.error {
+  border: 1px solid #ff0033 !important;
+  background: rgba(255, 0, 51, 0.1) !important;
+}
+
+.error-message {
+  color: #ff0033;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
 /* === Buttons === */
 button {
   display: block;

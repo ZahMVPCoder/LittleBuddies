@@ -1,256 +1,268 @@
-heres everything in my home.css before adding anything
-
-/* === GLOBAL === */
+/* === GLOBAL ===nope */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  margin: 0; /* Remove default margin for all elements */
+  padding: 0; /* Remove default padding for all elements */
+  box-sizing: border-box; /* Include padding/border in element width/height */
+  font-family: "Poppins", sans-serif; /* Set default font for all elements */
 }
 
+/* === MAIN CONTAINER === */
 .home-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  text-align: center;
-  padding: 1rem;
-  animation: fadeIn 0.6s ease-in-out;
+  position: relative; /* Allows absolute children positioning */
+  width: 100%; /* Full width */
+  height: 100vh; /* Full viewport height */
+  color: #fff; /* Default text color white */
+  display: flex; /* Flex layout for vertical stacking */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: space-between; /* Space children evenly vertically */
+  overflow: hidden; /* Hide overflowing content */
+  text-align: center; /* Center text inside */
+  padding: 1rem; /* Inner padding */
+  animation: fadeIn 0.6s ease-in-out; /* Fade-in animation on load */
 }
 
+/* === FADE IN ANIMATION === */
 @keyframes fadeIn {
   from {
-    opacity: 0;
-    transform: scale(0.97);
+    opacity: 0; /* Start invisible */
+    transform: scale(0.97); /* Slightly smaller */
   }
   to {
-    opacity: 1;
-    transform: scale(1);
+    opacity: 1; /* Fully visible */
+    transform: scale(1); /* Normal size */
   }
 }
 
-/* === BACKGROUNDS === */
+/* === BACKGROUNDS FOR CHARACTERS === */
 .penguin-bg {
-  background: linear-gradient(180deg, #1c2541, #0b132b);
+  background: linear-gradient(180deg, #1c2541, #0b132b); /* Dark blue gradient */
 }
 
 .duck-bg {
-  background: linear-gradient(180deg, #2a9d8f, #264653);
+  background: linear-gradient(180deg, #2a9d8f, #264653); /* Green/blue gradient */
 }
 
 .chicken-bg {
-  background: linear-gradient(180deg, #ffaf00, #ff6f00);
+  background: linear-gradient(180deg, #ffaf00, #ff6f00); /* Orange gradient */
 }
 
 /* === BACK BUTTON === */
 .back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: #fff;
-  font-size: 1.5rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  position: absolute; /* Position over content */
+  top: 20px; /* 20px from top */
+  left: 20px; /* 20px from left */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border: none; /* Remove border */
+  color: #fff; /* White text */
+  font-size: 1.5rem; /* Large text */
+  padding: 0.4rem 0.8rem; /* Inner spacing */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth hover effect */
 }
 
 .back-button:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.25); /* Brighter on hover */
 }
 
 /* === CHARACTER LABEL === */
 .character-label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 60px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #00ffaa;
+  display: flex; /* Horizontal layout */
+  align-items: center; /* Center vertically */
+  gap: 10px; /* Space between icon and text */
+  margin-top: 60px; /* Space from top */
+  font-size: 1.2rem; /* Slightly larger text */
+  font-weight: 700; /* Bold text */
+  text-transform: uppercase; /* Uppercase letters */
+  color: #00ffaa; /* Neon green accent */
 }
 
 .character-label img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 5px;
+  width: 60px; /* Fixed icon width */
+  height: 60px; /* Fixed icon height */
+  object-fit: contain; /* Maintain aspect ratio */
+  border-radius: 50%; /* Circular */
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
+  padding: 5px; /* Inner spacing */
 }
 
 /* === STATS PANEL === */
 .stats-panel {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 255, 170, 0.2);
-  margin-top: 1rem;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark panel */
+  padding: 1rem 1.5rem; /* Inner spacing */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.2); /* Neon glow effect */
+  margin-top: 1rem; /* Space above panel */
 }
 
 .stats-panel h3 {
-  margin-bottom: 0.6rem;
-  font-size: 1rem;
-  color: #00ffaa;
-  letter-spacing: 2px;
+  margin-bottom: 0.6rem; /* Space below heading */
+  font-size: 1rem; /* Normal size heading */
+  color: #00ffaa; /* Accent color */
+  letter-spacing: 2px; /* Spacing between letters */
 }
 
 .stat-item {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  color: #eee;
-  padding: 0.2rem 0;
+  display: flex; /* Horizontal layout */
+  justify-content: space-between; /* Space label and value */
+  font-size: 0.9rem; /* Slightly smaller text */
+  color: #eee; /* Light text */
+  padding: 0.2rem 0; /* Small vertical padding */
 }
 
 /* === CHARACTER DISPLAY === */
 .character-display {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1.5rem;
+  position: relative; /* For positioning speech bubbles */
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center horizontally */
+  margin-top: 1.5rem; /* Space above */
 }
 
 .character-main {
-  width: 180px;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  width: 180px; /* Character image width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Fit image within box */
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3)); /* Glow effect */
 }
 
 /* === SPEECH BUBBLE === */
 .speech-bubble {
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  padding: 1rem;
-  max-width: 250px;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #fff;
-  white-space: pre-line;
-  box-shadow: 0 0 12px rgba(0, 255, 170, 0.1);
-  animation: bubblePop 0.5s ease-in-out;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Soft border */
+  border-radius: 15px; /* Rounded corners */
+  padding: 1rem; /* Inner spacing */
+  max-width: 250px; /* Limit width */
+  margin-top: 1rem; /* Space above */
+  font-size: 0.9rem; /* Smaller text */
+  color: #fff; /* White text */
+  white-space: pre-line; /* Preserve line breaks */
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.1); /* Neon glow */
+  animation: bubblePop 0.5s ease-in-out; /* Pop animation */
 }
 
 @keyframes bubblePop {
   from {
-    transform: scale(0.8);
-    opacity: 0;
+    transform: scale(0.8); /* Start small */
+    opacity: 0; /* Start invisible */
   }
   to {
-    transform: scale(1);
-    opacity: 1;
+    transform: scale(1); /* Full size */
+    opacity: 1; /* Fully visible */
   }
 }
 
 /* === ACTION BUTTONS === */
 .action-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  display: flex; /* Horizontal layout */
+  gap: 1rem; /* Space between buttons */
+  margin-top: 1.5rem; /* Space above */
 }
 
 .action-buttons button {
-  border: none;
-  border-radius: 12px;
-  padding: 0.7rem 1.2rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
+  border: none; /* Remove border */
+  border-radius: 12px; /* Rounded corners */
+  padding: 0.7rem 1.2rem; /* Inner spacing */
+  font-weight: 600; /* Semi-bold text */
+  cursor: pointer; /* Pointer on hover */
+  transition: all 0.3s ease; /* Smooth hover effect */
+  letter-spacing: 1px; /* Slight spacing */
 }
 
 .quest-btn {
-  background: linear-gradient(90deg, #00ffaa, #00aaff);
-  color: #000;
+  background: linear-gradient(90deg, #00ffaa, #00aaff); /* Gradient green/blue */
+  color: #000; /* Black text */
 }
 
 .race-btn {
-  background: linear-gradient(90deg, #ff00aa, #ff6eff);
-  color: #fff;
+  background: linear-gradient(90deg, #ff00aa, #ff6eff); /* Gradient pink/purple */
+  color: #fff; /* White text */
 }
 
 .achievements-btn {
-  background: linear-gradient(90deg, #ffaa00, #ff6a00);
-  color: #000;
+  background: linear-gradient(90deg, #ffaa00, #ff6a00); /* Gradient orange */
+  color: #000; /* Black text */
 }
 
 .action-buttons button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); /* Glow effect */
 }
 
 /* === INVENTORY ICON === */
 .inventory-icon {
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
-  font-size: 1.8rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  position: absolute; /* Positioned over screen */
+  bottom: 25px; /* 25px from bottom */
+  right: 25px; /* 25px from right */
+  font-size: 1.8rem; /* Icon size */
+  cursor: pointer; /* Pointer on hover */
+  transition: transform 0.3s ease; /* Smooth scaling */
 }
 
 .inventory-icon:hover {
-  transform: scale(1.2);
+  transform: scale(1.2); /* Grow icon on hover */
 }
 
 /* === DAY STREAK === */
 .day-streak {
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-  font-size: 0.9rem;
-  color: #00ffaa;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  letter-spacing: 1px;
+  position: absolute; /* Positioned over screen */
+  bottom: 25px; /* 25px from bottom */
+  left: 25px; /* 25px from left */
+  font-size: 0.9rem; /* Small text */
+  color: #00ffaa; /* Neon green */
+  background: rgba(255, 255, 255, 0.08); /* Semi-transparent bg */
+  padding: 0.4rem 0.8rem; /* Inner spacing */
+  border-radius: 8px; /* Rounded corners */
+  letter-spacing: 1px; /* Space between letters */
 }
 
-/* === RESPONSIVE === */
+/* === RESPONSIVE DESIGN === */
 @media (max-width: 500px) {
   .character-main {
-    width: 140px;
+    width: 140px; /* Smaller character image */
   }
 
   .speech-bubble {
-    max-width: 200px;
-    font-size: 0.8rem;
+    max-width: 200px; /* Smaller bubble */
+    font-size: 0.8rem; /* Smaller text */
   }
 
   .action-buttons {
-    flex-direction: column;
+    flex-direction: column; /* Stack buttons vertically */
   }
 
   .action-buttons button {
-    width: 100%;
+    width: 100%; /* Full width buttons */
   }
 }
+
+/* === CHARACTER ICONS / BUTTONS === */
 .character-button img,
 .character-icons img {
-  width: 120px;
-  height: auto;
+  width: 60px; /* Reduced from 80px */
+  height: 60px; /* Maintain square aspect ratio */
   object-fit: contain;
   filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.3));
   transition: transform 0.3s ease;
 }
 
-.character-button img:hover {
-  transform: scale(1.1);
+.character-icons img {
+  width: 40px; /* Smaller preview icons */
+  height: 40px;
 }
 
+.character-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; /* Reduced gap */
+  padding: 8px; /* Reduced padding */
+}
+
+/* Character main override for selected view */
 .character-main {
-  width: 250px;
+  width: 120px; /* Reduced from 250px */
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));

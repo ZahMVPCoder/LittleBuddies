@@ -4,17 +4,34 @@ import '../css/LoginForm.css';
 function LoginForm({ onNavigate }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!email.trim()) {
+      newErrors.email = 'Username/Email is required';
+    }
+    if (!password.trim()) {
+      newErrors.password = 'Password is required';
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    // Navigate to character selection
-    onNavigate('character-select');
+    if (validateForm()) {
+      // Navigate to character selection
+      onNavigate('character-select');
+    }
   };
 
   const handleSignIn = (e) => {
     e.preventDefault();
-    // Navigate to character selection
-    onNavigate('character-select');
+    if (validateForm()) {
+      // Navigate to character selection
+      onNavigate('character-select');
+    }
   };
 
   const generatePassword = () => {
@@ -50,7 +67,9 @@ function LoginForm({ onNavigate }) {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className={errors.email ? 'error' : ''}
             />
+            {errors.email && <span className="error-message">{errors.email}</span>}
           </div>
 
           <div className="form-group">
@@ -61,7 +80,9 @@ function LoginForm({ onNavigate }) {
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className={errors.password ? 'error' : ''}
             />
+            {errors.password && <span className="error-message">{errors.password}</span>}
           </div>
 
           <button

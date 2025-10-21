@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/Home.css';
+import ChatBox from './ChatBox';
 
 function Home({ character = 'penguin', onNavigate }) {
   const characterData = {
@@ -11,12 +12,12 @@ function Home({ character = 'penguin', onNavigate }) {
       background: 'penguin-bg'
     },
     duck: {
-      name: 'DUCK',
-      image: 'https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Cartoons-PNG/Little_Duck_PNG_Clip_Art_Image.png?m=1629830181',
-      message: '"QUACK"\n\nI BELIEVE IN YOU!',
-      stats: { spd: 4, str: 3, sta: 5 },
-      background: 'duck-bg'
-    },
+  name: 'DUCK',
+  image: 'https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Cartoons-PNG/Little_Duck_PNG_Clip_Art_Image.png?m=1629830181',
+  message: "I FEEL LIKE I'M GOING TO LEVEL UP IF YOU DO 5 JUMPING JACKS",
+  stats: { spd: 4, str: 3, sta: 5 },
+  background: 'duck-bg'
+},
     chicken: {
   name: 'CHICKEN',
   image: 'https://www.freeiconspng.com/uploads/red-single-chicken-png-8.png',

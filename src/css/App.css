@@ -1,188 +1,191 @@
-/* Reset and Base Styles */
+/* === Reset and Base Styles === nope */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Remove default margin for all elements */
+  padding: 0; /* Remove default padding for all elements */
+  box-sizing: border-box; /* Include padding/border in width/height calculations */
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif; 
+  /* Use system-friendly sans-serif fonts for readability */
 }
 
-/* Container Styles */
+/* === Container Styles === */
 .main-container {
-  min-height: 100vh;
-  width: 100vw;
-  background: linear-gradient(to bottom, #0008ff, #7c3aed);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
+  min-height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background: linear-gradient(to bottom, #0008ff, #7c3aed); /* Gradient background */
+  display: flex; /* Use flexbox for centering content */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  padding: 0 1rem; /* Horizontal padding for small screens */
+  position: fixed; /* Stay fixed on screen */
+  top: 0; /* Stick to top */
+  left: 0; /* Stick to left */
 }
 
 .content-wrapper {
-  width: 100%;
-  max-width: 50rem;
-  margin: 0 auto;
+  width: 100%; /* Full width of parent */
+  max-width: 50rem; /* Limit width for readability */
+  margin: 0 auto; /* Center horizontally */
 }
 
-/* Logo Styles */
+/* === Logo Styles === */
 .logo-container {
-  text-align: center;
-  margin-bottom: 4rem;
+  text-align: center; /* Center logo text */
+  margin-bottom: 4rem; /* Space below logo */
 }
 
 .logo-title {
-  font-size: 4rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
+  font-size: 4rem; /* Large title */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 1.5rem; /* Space below title */
 }
 
 .logo-level {
-  color: #000000;
+  color: #000000; /* Specific color for part of the logo */
 }
 
 .logo-up {
-  color: #cdeb54;
+  color: #cdeb54; /* Highlight color */
 }
 
 .logo-well {
-  color: #000000;
+  color: #000000; /* Regular color */
 }
 
 .logo-tagline {
-  color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: 500;
+  color: #ffffff; /* White tagline */
+  font-size: 1.5rem; /* Smaller than title */
+  font-weight: 500; /* Medium weight */
 }
 
-/* Form Styles */
+/* === Form Styles === */
 .form-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Stack vertically */
+  gap: 2rem; /* Space between form elements */
 }
 
 .input-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack label + input vertically */
 }
 
 .input-label {
-  display: block;
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  display: block; /* Make label block-level */
+  color: #ffffff; /* White text */
+  font-size: 1rem; /* Normal font size */
+  font-weight: bold; /* Bold label */
+  margin-bottom: 0.75rem; /* Space below label */
+  text-transform: uppercase; /* Uppercase letters */
+  letter-spacing: 0.05em; /* Space between letters */
 }
 
 .input-field {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  background-color: #d1d5db;
-  color: #000000;
-  border-radius: 0.5rem;
-  border: none;
-  outline: none;
-  transition: all 0.3s ease;
-  font-size: 1.125rem;
+  width: 100%; /* Fill container width */
+  padding: 1rem 1.5rem; /* Internal spacing */
+  background-color: #d1d5db; /* Light gray background */
+  color: #000000; /* Text color black */
+  border-radius: 0.5rem; /* Rounded corners */
+  border: none; /* Remove default border */
+  outline: none; /* Remove default focus outline */
+  transition: all 0.3s ease; /* Smooth transitions */
+  font-size: 1.125rem; /* Slightly larger text */
 }
 
 .input-field:focus {
-  box-shadow: 0 0 0 2px #60a5fa;
+  box-shadow: 0 0 0 2px #60a5fa; /* Blue outline when focused */
 }
 
-/* Button Styles */
+/* === Button Styles === */
 .button-base {
-  width: 100%;
-  font-weight: bold;
-  padding: 1.25rem 2rem;
-  border-radius: 9999px;
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.2s ease;
-  transform: scale(1);
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  width: 100%; /* Full width */
+  font-weight: bold; /* Bold text */
+  padding: 1.25rem 2rem; /* Internal padding */
+  border-radius: 9999px; /* Fully rounded pill shape */
+  font-size: 1.25rem; /* Button text size */
+  text-transform: uppercase; /* Uppercase letters */
+  letter-spacing: 0.05em; /* Space between letters */
+  transition: all 0.2s ease; /* Smooth hover transitions */
+  transform: scale(1); /* Default scale */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+              0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Add depth */
 }
 
 .button-base:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Slight grow on hover */
 }
 
 .button-primary {
-  background-color: #2563eb;
-  color: #ffffff;
+  background-color: #2563eb; /* Blue background */
+  color: #ffffff; /* White text */
 }
 
 .button-primary:hover {
-  background-color: #1d4ed8;
+  background-color: #1d4ed8; /* Darker blue on hover */
 }
 
 .button-secondary {
-  background-color: #ef4444;
-  color: #ffffff;
+  background-color: #ef4444; /* Red background */
+  color: #ffffff; /* White text */
 }
 
 .button-secondary:hover {
-  background-color: #dc2626;
+  background-color: #dc2626; /* Darker red on hover */
 }
 
 .button-link {
-  background: none;
-  color: #ffffff;
-  font-size: 1rem;
-  padding: 0.75rem;
-  box-shadow: none;
-  transform: none;
-  border-radius: 0.25rem;
-  text-decoration: none;
+  background: none; /* No background */
+  color: #ffffff; /* White text */
+  font-size: 1rem; /* Smaller text */
+  padding: 0.75rem; /* Padding */
+  box-shadow: none; /* No shadow */
+  transform: none; /* No scaling */
+  border-radius: 0.25rem; /* Slightly rounded */
+  text-decoration: none; /* Remove underline */
 }
 
 .button-link:hover {
-  color: #93c5fd;
-  transform: none;
-  background-color: rgba(255, 255, 255, 0.1);
+  color: #93c5fd; /* Change text color on hover */
+  transform: none; /* No scaling */
+  background-color: rgba(255, 255, 255, 0.1); /* Slight highlight */
 }
 
 .forgot-password-container {
-  text-align: center;
+  text-align: center; /* Center forgot password text */
 }
 
-/* Responsive Design */
+/* === Responsive Design === */
 @media (max-width: 640px) {
   .logo-title {
-    font-size: 2rem;
+    font-size: 2rem; /* Smaller logo on mobile */
   }
   
   .logo-tagline {
-    font-size: 1rem;
+    font-size: 1rem; /* Smaller tagline */
   }
   
   .button-base {
-    font-size: 1rem;
+    font-size: 1rem; /* Smaller buttons */
   }
 }
 
+/* === Generate Button === */
 .generate-btn {
-  margin-top: 10px;
-  background-color: #5b21b6;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.2s;
+  margin-top: 10px; /* Space above button */
+  background-color: #5b21b6; /* Purple background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Internal spacing */
+  border-radius: 12px; /* Rounded corners */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor */
+  font-weight: bold; /* Bold text */
+  transition: 0.2s; /* Smooth hover transition */
 }
 
 .generate-btn:hover {
-  background-color: #7c3aed;
+  background-color: #7c3aed; /* Brighter purple on hover */
 }

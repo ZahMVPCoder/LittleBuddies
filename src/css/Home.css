@@ -1,15 +1,16 @@
 /* === GLOBAL === */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  margin: 0; /* Remove default margin for all elements */
+  padding: 0; /* Remove default padding for all elements */
+  box-sizing: border-box; /* Include padding and border in element size */
+  font-family: "Poppins", sans-serif; /* Set default font for all elements */
 }
 
-.home-container {
+/* === MAIN CONTAINER === */
+.home-container { /* after you choose your character, this is what messes with what you see
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%; /* change from 100vh to 100% */
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -19,200 +20,206 @@
   text-align: center;
   padding: 1rem;
   animation: fadeIn 0.6s ease-in-out;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  height: 100vh; /* Change from 100% to 100vh for full viewport height */
 }
 
+
+/* === FADE IN ANIMATION === */
 @keyframes fadeIn {
   from {
-    opacity: 0;
-    transform: scale(0.97);
+    opacity: 0; /* Start invisible */
+    transform: scale(0.97); /* Slightly smaller at start */
   }
   to {
-    opacity: 1;
-    transform: scale(1);
+    opacity: 1; /* Fully visible */
+    transform: scale(1); /* Normal size at end */
   }
 }
 
-/* === BACKGROUNDS === */
+/* === BACKGROUNDS FOR CHARACTERS === */
 .penguin-bg {
-  background: linear-gradient(180deg, #1c2541, #0b132b);
+  background: linear-gradient(180deg, #1c2541, #0b132b); /* Dark blue gradient */
 }
 
 .duck-bg {
-  background: linear-gradient(180deg, #2a9d8f, #264653);
+  background: linear-gradient(180deg, #2a9d8f, #264653); /* Green/blue gradient */
 }
 
 .chicken-bg {
-  background: linear-gradient(180deg, #ffaf00, #ff6f00);
+  background: linear-gradient(180deg, #ffaf00, #ff6f00); /* Orange gradient */
 }
 
 /* === BACK BUTTON === */
 .back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: #fff;
-  font-size: 1.5rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  position: absolute; /* Positioned relative to parent */
+  top: 20px; /* 20px from top */
+  left: 20px; /* 20px from left */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  border: none; /* Remove default border */
+  color: #fff; /* White text */
+  font-size: 1.5rem; /* Button text size */
+  padding: 0.4rem 0.8rem; /* Inner spacing */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth hover effect */
 }
 
 .back-button:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.25); /* Brighter hover effect */
 }
 
 /* === CHARACTER LABEL === */
 .character-label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 60px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #00ffaa;
+  display: flex; /* Horizontal layout */
+  align-items: center; /* Center vertically */
+  gap: 10px; /* Space between icon and text */
+  margin-top: 20px; /* Reduced from 60px */
+  font-size: 1.2rem; /* Slightly larger text */
+  font-weight: 700; /* Bold text */
+  text-transform: uppercase; /* Uppercase letters */
+  color: #00ffaa; /* Neon green accent */
 }
 
-.character-label img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 5px;
+.character-label img { /* Character icon styles after you choose character */
+  width: 80px; /* Reduced from 60px */
+  height: 80px; /* Reduced from 60px */
+  object-fit: contain; /* Maintain aspect ratio */
+  border-radius: 50%; /* Circular icon */
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
+  padding: 5px; /* Inner spacing */
 }
 
 /* === STATS PANEL === */
 .stats-panel {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 255, 170, 0.2);
-  margin-top: 1rem;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark panel */
+  padding: 0.5rem 1rem; /* Reduced padding */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.2); /* Glow effect */
+  margin-top: 0.5rem; /* Reduced from 1rem */
 }
 
 .stats-panel h3 {
-  margin-bottom: 0.6rem;
-  font-size: 1rem;
-  color: #00ffaa;
-  letter-spacing: 2px;
+  margin-bottom: 0.6rem; /* Space below heading */
+  font-size: 1rem; /* Heading size */
+  color: #00ffaa; /* Neon green */
+  letter-spacing: 2px; /* Space between letters */
 }
 
 .stat-item {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  color: #eee;
-  padding: 0.2rem 0;
+  display: flex; /* Horizontal layout for label/value */
+  justify-content: space-between; /* Space label and value */
+  font-size: 0.9rem; /* Slightly smaller text */
+  color: #eee; /* Light text color */
+  padding: 0.2rem 0; /* Small vertical padding */
 }
 
 /* === CHARACTER DISPLAY === */
 .character-display {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1.5rem;
+  position: relative; /* For positioning child elements */
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Stack vertically */
+  align-items: center; /* Center horizontally */
+  margin-top: 0.5rem; /* Reduced from 1.5rem */
 }
 
-/* ✅ Smaller main character image */
+/* Smaller main character image */
 .character-main {
-  width: 18vw;
-  max-width: 200px;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+  width: 15vw; /* Reduced from 18vw */
+  max-width: 160px; /* Reduced from 200px */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Contain within box */
+  filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.4)); /* Shadow for depth */
 }
 
 /* === SPEECH BUBBLE === */
 .speech-bubble {
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  padding: 1rem;
-  max-width: 250px;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #fff;
-  white-space: pre-line;
-  box-shadow: 0 0 12px rgba(0, 255, 170, 0.1);
-  animation: bubblePop 0.5s ease-in-out;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Soft border */
+  border-radius: 15px; /* Rounded corners */
+  padding: 0.75rem; /* Reduced from 1rem */
+  max-width: 200px; /* Reduced from 250px */
+  margin-top: 0.5rem; /* Reduced from 1rem */
+  font-size: 0.9rem; /* Text size */
+  color: #fff; /* White text */
+  white-space: pre-line; /* Preserve line breaks */
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.1); /* Glow effect */
+  animation: bubblePop 0.5s ease-in-out; /* Pop animation */
 }
 
 @keyframes bubblePop {
   from {
-    transform: scale(0.8);
-    opacity: 0;
+    transform: scale(0.8); /* Start smaller */
+    opacity: 0; /* Start invisible */
   }
   to {
-    transform: scale(1);
-    opacity: 1;
+    transform: scale(1); /* Full size */
+    opacity: 1; /* Fully visible */
   }
 }
 
 /* === ACTION BUTTONS === */
 .action-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  display: flex; /* Horizontal layout */
+  gap: 0.5rem; /* Reduced from 1rem */
+  margin-top: 1rem; /* Reduced from 1.5rem */
 }
 
 .action-buttons button {
-  border: none;
-  border-radius: 12px;
-  padding: 0.7rem 1.2rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
+  border: none; /* Remove default border */
+  border-radius: 12px; /* Rounded corners */
+  padding: 0.5rem 1rem; /* Reduced from 0.7rem 1.2rem */
+  font-weight: 600; /* Semi-bold text */
+  cursor: pointer; /* Pointer on hover */
+  transition: all 0.3s ease; /* Smooth hover effect */
+  letter-spacing: 1px; /* Slight spacing */
 }
 
 .quest-btn {
-  background: linear-gradient(90deg, #00ffaa, #00aaff);
-  color: #000;
+  background: linear-gradient(90deg, #00ffaa, #00aaff); /* Gradient green/blue */
+  color: #000; /* Black text */
 }
 
 .race-btn {
-  background: linear-gradient(90deg, #ff00aa, #ff6eff);
-  color: #fff;
+  background: linear-gradient(90deg, #ff00aa, #ff6eff); /* Gradient pink/purple */
+  color: #fff; /* White text */
 }
 
 .achievements-btn {
-  background: linear-gradient(90deg, #ffaa00, #ff6a00);
-  color: #000;
+  background: linear-gradient(90deg, #ffaa00, #ff6a00); /* Gradient orange */
+  color: #000; /* Black text */
 }
 
 .action-buttons button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); /* Glow effect */
 }
 
 /* === INVENTORY ICON === */
 .inventory-icon {
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
-  font-size: 1.8rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  position: absolute; /* Positioned over screen */
+  bottom: 25px; /* 25px from bottom */
+  right: 25px; /* 25px from right */
+  font-size: 1.8rem; /* Icon size */
+  cursor: pointer; /* Pointer cursor */
+  transition: transform 0.3s ease; /* Smooth scaling */
 }
 
 .inventory-icon:hover {
-  transform: scale(1.2);
+  transform: scale(1.2); /* Grow icon on hover */
 }
 
 /* === DAY STREAK === */
 .day-streak {
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-  font-size: 0.9rem;
-  color: #00ffaa;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  letter-spa
+  position: absolute; /* Positioned over screen */
+  bottom: 75px; /* Reduced from 175px */
+  left: 25px; /* 25px from left */
+  font-size: 0.9rem; /* Small text */
+  color: #00ffaa; /* Neon green */
+  background: rgba(255, 255, 255, 0.08); /* Semi-transparent background */
+  padding: 0.4rem 0.8rem; /* Inner spacing */
+  border-radius: 8px; /* Rounded corners */
+  letter-spacing: 1px; /* Space between letters */
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/CharacterSelect.css';  // Add this import
 
 // Function to play AI voice using Web Speech API
 const playVoice = (character) => {
@@ -17,7 +18,7 @@ const playVoice = (character) => {
       utterance.rate = 1.2;
       break;
     case 'duck':
-      utterance = new SpeechSynthesisUtterance('Quack quack! I am your friendly duck buddy!');
+      utterance = new SpeechSynthesisUtterance('Quack quack!');
       utterance.pitch = 1.5;
       utterance.rate = 1;
       break;
@@ -38,8 +39,6 @@ function CharacterSelect({ onNavigate, onCharacterSelect }) {
   return (
     <div className="character-select-container">
       <button className="back-button" onClick={() => onNavigate('login')}>←</button>
-
-      <button className="feedback-button">FEEDBACK</button>
 
       <div className="character-icons">
         <img src="https://pngimg.com/uploads/madagascar_penguins/madagascar_penguins_PNG27.png" alt="Penguin" className="icon-small" onMouseEnter={() => playVoice('penguin')} />
