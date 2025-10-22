@@ -1,0 +1,225 @@
+/* === GLOBAL === */
+* {
+  margin: 0; /* Remove default margin for all elements */
+  padding: 0; /* Remove default padding for all elements */
+  box-sizing: border-box; /* Include padding and border in element size */
+  font-family: "Poppins", sans-serif; /* Set default font for all elements */
+}
+
+/* === MAIN CONTAINER === */
+.home-container { /* after you choose your character, this is what messes with what you see
+  position: relative;
+  width: 100%;
+  height: 100%; /* change from 100vh to 100% */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+  animation: fadeIn 0.6s ease-in-out;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  height: 100vh; /* Change from 100% to 100vh for full viewport height */
+}
+
+
+/* === FADE IN ANIMATION === */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start invisible */
+    transform: scale(0.97); /* Slightly smaller at start */
+  }
+  to {
+    opacity: 1; /* Fully visible */
+    transform: scale(1); /* Normal size at end */
+  }
+}
+
+/* === BACKGROUNDS FOR CHARACTERS === */
+.penguin-bg {
+  background: linear-gradient(180deg, #1c2541, #0b132b); /* Dark blue gradient */
+}
+
+.duck-bg {
+  background: linear-gradient(180deg, #2a9d8f, #264653); /* Green/blue gradient */
+}
+
+.chicken-bg {
+  background: linear-gradient(180deg, #ffaf00, #ff6f00); /* Orange gradient */
+}
+
+/* === BACK BUTTON === */
+.back-button {
+  position: absolute; /* Positioned relative to parent */
+  top: 20px; /* 20px from top */
+  left: 20px; /* 20px from left */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  border: none; /* Remove default border */
+  color: #fff; /* White text */
+  font-size: 1.5rem; /* Button text size */
+  padding: 0.4rem 0.8rem; /* Inner spacing */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.25); /* Brighter hover effect */
+}
+
+/* === CHARACTER LABEL === */
+.character-label {
+  display: flex; /* Horizontal layout */
+  align-items: center; /* Center vertically */
+  gap: 10px; /* Space between icon and text */
+  margin-top: 20px; /* Reduced from 60px */
+  font-size: 1.2rem; /* Slightly larger text */
+  font-weight: 700; /* Bold text */
+  text-transform: uppercase; /* Uppercase letters */
+  color: #00ffaa; /* Neon green accent */
+}
+
+.character-label img { /* Character icon styles after you choose character */
+  width: 80px; /* Reduced from 60px */
+  height: 80px; /* Reduced from 60px */
+  object-fit: contain; /* Maintain aspect ratio */
+  border-radius: 50%; /* Circular icon */
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
+  padding: 5px; /* Inner spacing */
+}
+
+/* === STATS PANEL === */
+.stats-panel {
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark panel */
+  padding: 0.5rem 1rem; /* Reduced padding */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.2); /* Glow effect */
+  margin-top: 0.5rem; /* Reduced from 1rem */
+}
+
+.stats-panel h3 {
+  margin-bottom: 0.6rem; /* Space below heading */
+  font-size: 1rem; /* Heading size */
+  color: #00ffaa; /* Neon green */
+  letter-spacing: 2px; /* Space between letters */
+}
+
+.stat-item {
+  display: flex; /* Horizontal layout for label/value */
+  justify-content: space-between; /* Space label and value */
+  font-size: 0.9rem; /* Slightly smaller text */
+  color: #eee; /* Light text color */
+  padding: 0.2rem 0; /* Small vertical padding */
+}
+
+/* === CHARACTER DISPLAY === */
+.character-display {
+  position: relative; /* For positioning child elements */
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Stack vertically */
+  align-items: center; /* Center horizontally */
+  margin-top: 0.5rem; /* Reduced from 1.5rem */
+}
+
+/* Smaller main character image */
+.character-main {
+  width: 15vw; /* Reduced from 18vw */
+  max-width: 160px; /* Reduced from 200px */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Contain within box */
+  filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.4)); /* Shadow for depth */
+}
+
+/* === SPEECH BUBBLE === */
+.speech-bubble {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Soft border */
+  border-radius: 15px; /* Rounded corners */
+  padding: 0.75rem; /* Reduced from 1rem */
+  max-width: 200px; /* Reduced from 250px */
+  margin-top: 0.5rem; /* Reduced from 1rem */
+  font-size: 0.9rem; /* Text size */
+  color: #fff; /* White text */
+  white-space: pre-line; /* Preserve line breaks */
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.1); /* Glow effect */
+  animation: bubblePop 0.5s ease-in-out; /* Pop animation */
+}
+
+@keyframes bubblePop {
+  from {
+    transform: scale(0.8); /* Start smaller */
+    opacity: 0; /* Start invisible */
+  }
+  to {
+    transform: scale(1); /* Full size */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* === ACTION BUTTONS === */
+.action-buttons {
+  display: flex; /* Horizontal layout */
+  gap: 0.5rem; /* Reduced from 1rem */
+  margin-top: 1rem; /* Reduced from 1.5rem */
+}
+
+.action-buttons button {
+  border: none; /* Remove default border */
+  border-radius: 12px; /* Rounded corners */
+  padding: 0.5rem 1rem; /* Reduced from 0.7rem 1.2rem */
+  font-weight: 600; /* Semi-bold text */
+  cursor: pointer; /* Pointer on hover */
+  transition: all 0.3s ease; /* Smooth hover effect */
+  letter-spacing: 1px; /* Slight spacing */
+}
+
+.quest-btn {
+  background: linear-gradient(90deg, #00ffaa, #00aaff); /* Gradient green/blue */
+  color: #000; /* Black text */
+}
+
+.race-btn {
+  background: linear-gradient(90deg, #ff00aa, #ff6eff); /* Gradient pink/purple */
+  color: #fff; /* White text */
+}
+
+.achievements-btn {
+  background: linear-gradient(90deg, #ffaa00, #ff6a00); /* Gradient orange */
+  color: #000; /* Black text */
+}
+
+.action-buttons button:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); /* Glow effect */
+}
+
+/* === INVENTORY ICON === */
+.inventory-icon {
+  position: absolute; /* Positioned over screen */
+  bottom: 25px; /* 25px from bottom */
+  right: 25px; /* 25px from right */
+  font-size: 1.8rem; /* Icon size */
+  cursor: pointer; /* Pointer cursor */
+  transition: transform 0.3s ease; /* Smooth scaling */
+}
+
+.inventory-icon:hover {
+  transform: scale(1.2); /* Grow icon on hover */
+}
+
+/* === DAY STREAK === */
+.day-streak {
+  position: absolute; /* Positioned over screen */
+  bottom: 75px; /* Reduced from 175px */
+  left: 25px; /* 25px from left */
+  font-size: 0.9rem; /* Small text */
+  color: #00ffaa; /* Neon green */
+  background: rgba(255, 255, 255, 0.08); /* Semi-transparent background */
+  padding: 0.4rem 0.8rem; /* Inner spacing */
+  border-radius: 8px; /* Rounded corners */
+  letter-spacing: 1px; /* Space between letters */
+}

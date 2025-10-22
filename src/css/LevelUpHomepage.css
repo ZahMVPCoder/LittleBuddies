@@ -1,0 +1,69 @@
+/* === Global Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* === Main Page Wrapper === */
+.homepage-wrapper {
+  background: radial-gradient(circle at top, #0a0f1e, #000);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* === Container (Outer Box) === */
+.homepage-container {
+  background: rgba(20, 20, 30, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 170, 0.25);
+  padding: 2.5rem;
+  width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.homepage-container:hover {
+  transform: scale(1.01);
+}
+
+/* === Header & Logo === */
+.homepage-header {
+  margin-bottom: 1.5rem;
+}
+
+.homepage-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-logo img {
+  width: 120px;
+  height: auto;
+}
+
+/* === Login Section === */
+.homepage-login-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: inset 0 0 10px rgba(0, 255, 170, 0.15);
+}
+
+/* If your LoginForm already has its own styles, this ensures proper spacing */
+.homepage-login-form {
+  margin-top: 1rem;
+}
+
+/* === Responsive === */
+@media (max-width: 500px) {
+  .homepage-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
