@@ -1,0 +1,188 @@
+/* === Global Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0a0f1e, #000);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* === Container === */
+.login-container {
+  width: 380px;
+  background: rgba(20, 20, 30, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 255, 170, 0.2);
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === Header === */
+.login-header {
+  margin-bottom: 1.5rem;
+}
+
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.title-level {
+  color: #00ffaa;
+}
+
+.title-up {
+  color: #00aaff;
+}
+
+.title-well {
+  color: #ff00aa;
+}
+
+.login-subtitle {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-top: 0.4rem;
+}
+
+/* === Form === */
+.login-form {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.form-title {
+  color: #00ffaa;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.form-subtitle {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 1.2rem;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.75rem;
+  color: #00ffaa;
+  margin-bottom: 0.4rem;
+  letter-spacing: 1px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 5px #00ffaa;
+}
+
+/* === Buttons === */
+button {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Generate Password Button */
+.generate-password-btn {
+  background: linear-gradient(90deg, #00ffaa, #00aaff);
+  color: #000;
+  margin-bottom: 0.8rem;
+}
+
+.generate-password-btn:hover {
+  box-shadow: 0 0 12px #00ffaa;
+}
+
+/* Sign Up Button */
+.sign-up-btn {
+  background: linear-gradient(90deg, #ff00aa, #ff6eff);
+  color: #fff;
+  margin-top: 0.8rem;
+}
+
+.sign-up-btn:hover {
+  box-shadow: 0 0 12px #ff00aa;
+}
+
+/* Sign In Button */
+.sign-in-btn {
+  background: linear-gradient(90deg, #00ffaa, #00aaff);
+  color: #000;
+  margin-top: 0.6rem;
+}
+
+.sign-in-btn:hover {
+  box-shadow: 0 0 12px #00ffaa;
+}
+
+/* Forgot Password */
+.forgot-password {
+  display: block;
+  margin: 0.8rem 0;
+  font-size: 0.8rem;
+  color: #00aaff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.forgot-password:hover {
+  color: #00ffaa;
+}
+
+/* === Responsive === */
+@media (max-width: 420px) {
+  .login-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+  .login-title {
+    font-size: 1.6rem;
+  }
+}
