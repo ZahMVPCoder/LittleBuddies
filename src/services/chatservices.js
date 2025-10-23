@@ -64,7 +64,7 @@ export const sendMessageWithOpenAI = async (messages, character) => {
         Authorization: `Bearer ${OPENAI_API_KEY}`,
       },
       body: JSON.stringify({
-        model: "gpt-4",
+        model: "gpt-4o-mini",
         messages: [
           {
             role: "system",
@@ -81,6 +81,7 @@ export const sendMessageWithOpenAI = async (messages, character) => {
     });
 
     const data = await response.json();
+     console.log("Data::: ", data)
     return { 
       reply: data.choices?.[0]?.message?.content?.trim() || "Let's get moving! What kind of exercise interests you?" 
     };
