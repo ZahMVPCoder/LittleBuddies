@@ -1,21 +1,24 @@
-# LevelUp Well Homepage
+# Little Buddies
 
-A responsive login/signup page for the LevelUp Well health application.
+Little Buddies is an interactive web app built to help people who spend most of their day sitting — whether working, studying, or coding — to stay active and take care of their body.
 
-## Features
-- Responsive design optimized for laptop resolution
-- Clean, modern UI with blue gradient background
+It introduces a personal AI buddy that acts as your own health and fitness trainer, chatting with you, giving advice, and reminding you to get moving when you’ve been sitting too long.
 
-## File Structure
-- `index.html` - Main HTML file
-- `css/styles.css` - All styling
-- `js/components/` - Individual React components
-- `js/main.js` - Main application logic
+# Everything Little Buddies Offers!
+AI Health Trainer – Your “Little Buddy” chats with you and encourages movement using an AI-powered chat system.
+Simple Exercises – Get quick, guided activities you can do right at your desk.
+Break Reminders – Stay consistent with gentle reminders to stretch or walk.
+Healthy Habits – Learn small, easy habits that make a big difference in your daily routine.
 
 ## Setup
-1. Download all files maintaining the folder structure
+1. Download all files, maintaining the folder structure
 2. Open `index.html` in a web browser
 3. No build process required - uses CDN for React
+
+# Built with
+React – for building the user interface
+AI API Integration – for chat responses and interaction
+Visual Studio Code – as the main development environment
 
 ## Components
 - **Logo**: Displays LevelUpWell branding
