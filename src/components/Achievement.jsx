@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../css/Achievement.css'; // Fixed import path
 
-const Achievement = () => {
+const Achievement = ({ onNavigate }) => {
   const [achievements] = useState([
     {
       id: 1,
@@ -53,6 +53,10 @@ const Achievement = () => {
 
   return (
     <div className="achievement-page">
+      <button className="back-button" onClick={() => onNavigate('character-select')}>
+        ←
+      </button>
+      
       <div className="achievement-container">
         {/* Header */}
         <div className="achievement-header">

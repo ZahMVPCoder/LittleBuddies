@@ -19,9 +19,6 @@ body {
   align-items: center; /* Vertically center content */
   justify-content: center; /* Horizontally center content */
   padding: 0 1rem; /* Horizontal padding for small screens */
-  position: fixed; /* Stay fixed on screen */
-  top: 0; /* Stick to top */
-  left: 0; /* Stick to left */
 }
 
 .content-wrapper {
