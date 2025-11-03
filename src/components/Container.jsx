@@ -5,6 +5,8 @@ import Home from './Home';
 import Achievement from './Achievement';
 import WelcomePage from './WelcomePage';
 import RacePage from './RacePage';
+import LearnMorePage from './LearnMorePage';
+import WorldMap from './WorldMap';
 
 function Container() {
   const [currentPage, setCurrentPage] = useState('welcome');
@@ -41,6 +43,12 @@ function Container() {
       )}
       {currentPage === 'race' && (
         <RacePage onNavigate={handleNavigation} />
+      )}
+      {currentPage === 'learn-more' && (
+        <LearnMorePage onNavigate={handleNavigation} />
+      )}
+      {currentPage === 'world-map' && (
+        <WorldMap onNavigate={handleNavigation} character={selectedCharacter} />
       )}
     </div>
   );

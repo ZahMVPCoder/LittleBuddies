@@ -53,7 +53,7 @@ function Home({ character = 'penguin', onNavigate }) {
       </div>
 
       <div className="action-buttons">
-        <button className="quest-btn">Quest!</button>
+        <button className="quest-btn" onClick={() => onNavigate('world-map')}>Quest!</button>
         <button className="race-btn" onClick={() => onNavigate('race')}>Race!</button>
         <button className="achievements-btn" onClick={() => onNavigate('achievements')}>Achievements</button>
       </div>

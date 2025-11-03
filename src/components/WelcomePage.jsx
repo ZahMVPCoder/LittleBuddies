@@ -32,6 +32,14 @@ function WelcomePage({ onNavigate }) {
     }
   ]);
 
+  // Define button safe zone
+  const buttonZone = {
+    top: window.innerHeight / 2 - 100, // 100px above button center
+    bottom: window.innerHeight / 2 + 100, // 100px below button center
+    left: window.innerWidth / 2 - 150, // 150px left of button center
+    right: window.innerWidth / 2 + 150 // 150px right of button center
+  };
+
   useEffect(() => {
     const animationFrame = setInterval(() => {
       setCharacters(chars => chars.map(char => {
@@ -40,14 +48,31 @@ function WelcomePage({ onNavigate }) {
         let newSpeedX = char.speedX;
         let newSpeedY = char.speedY;
 
-        // Bounce off horizontal edges
+        // Check horizontal boundaries
         if (newX <= 0 || newX >= window.innerWidth - 100) {
           newSpeedX = -char.speedX;
         }
 
-        // Bounce off vertical edges
+        // Check vertical boundaries
         if (newY <= 0 || newY >= window.innerHeight - 150) {
           newSpeedY = -char.speedY;
+        }
+
+        // Check button zone collision
+        if (newX > buttonZone.left && newX < buttonZone.right &&
+            newY > buttonZone.top && newY < buttonZone.bottom) {
+          // Determine which side to bounce off
+          if (char.x <= buttonZone.left || char.x >= buttonZone.right) {
+            newSpeedX = -char.speedX;
+          }
+          if (char.y <= buttonZone.top || char.y >= buttonZone.bottom) {
+            newSpeedY = -char.speedY;
+          }
+          // Move character outside button zone
+          if (char.x <= buttonZone.left) newX = buttonZone.left;
+          if (char.x >= buttonZone.right) newX = buttonZone.right;
+          if (char.y <= buttonZone.top) newY = buttonZone.top;
+          if (char.y >= buttonZone.bottom) newY = buttonZone.bottom;
         }
 
         return {
@@ -77,6 +102,12 @@ function WelcomePage({ onNavigate }) {
           onClick={() => onNavigate('login')}
         >
           Start Your Adventure! 🚀
+        </button>
+        <button 
+          className="learn-more-btn"
+          onClick={() => onNavigate('learn-more')}
+        >
+          Learn More
         </button>
       </div>
 
